@@ -1,0 +1,63 @@
+
+    int n; 
+  
+  //while (opc!=0){ 
+    cout<<"\t\tUN JUEGO POR JOSE IGNACIO PAEZ"<<endl; 
+    sleep(1);
+
+    ifstream archivo; 
+    archivo.open("titulo.txt"); 
+    string linea;
+    while (std::getline(archivo, linea)) {
+      cout << linea << endl;
+      sleep(1);
+    }
+
+    while (n!=0){
+      cout<<"MENU DE JUEGO"<<endl; 
+      cout<<"1.JUGAR \n2.CREDITOS E HISTORIA \n3.SALIR"<<endl; 
+      
+      cin>>n; 
+      if(n==1){
+        cout<<"res"<<endl;
+
+      }
+      else if(n==2){
+      cout<<"\t\tUN JUEGO POR JOSE IGNACIO PAEZ"<<endl; 
+      sleep(1);
+      ifstream archivo; 
+      archivo.open("historia.txt"); 
+      string linea;
+      while (std::getline(archivo, linea)) {
+        cout << linea << endl;
+        sleep(1);
+      }
+      }
+      else if(n==3){
+        cout<<"SALIENDO..."<<endl; 
+        sleep(1); 
+        break; 
+
+      }
+      else{
+        cout<<"DIGITA UNA OPCION VALIDA: "<<endl; 
+        cin>>n; 
+      }
+
+
+    }
+
+
+  */
+  //Warrior w1("KRATOS","SEMIGOD",50,50);
+  //w1.animation();
+  //w1.recieve(100); 
+  //Friendly f1("BOY","HUMAN","SON OF KRATOS"); 
+  //Warrior p1("KRATOS","SEMIGOD",5,5);
+  //p1.imprime();
+  //f1.recieve(5,p1);
+  //p1.printHealth();
+  //p1.imprime();
+
+//}
+
