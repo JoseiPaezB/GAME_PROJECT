@@ -61,3 +61,23 @@
 
 //}
 
+
+
+
+
+if(Warrior* ptrC = dynamic_cast<Warrior *>(Personajes[i])){
+      cout<<"\nVas a combatir con: "<<ptrC->getNombre()<<endl; 
+      cout<<"\nel damage de " <<ptrC->getNombre()<<" es: "<<ptrC->getDamage()<<endl; 
+      cout<<w1.animation(*ptrC);
+      w1.printHealth(); 
+      sleep(1); 
+    }else if(Friendly* ptrC = dynamic_cast<Friendly *>(Personajes[i])){
+      ptrC->getNombre();  
+      ptrC->recieve(4,w1);
+      w1.printHealth(); 
+      sleep(1);
+    }
+
+      
+
+    }

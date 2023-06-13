@@ -54,8 +54,11 @@ bool Warrior::DeadOrAlive(){
     }
     }*/
 
-    void Warrior::printHealth(){
-        std::cout<<"La salud actual de "<< getNombre() <<" es de "<<getHealth()<<std::endl; 
+    void Warrior::printHealth(int vidaMasOMenos){
+        int health;
+        health=(getHealth()+vidaMasOMenos); 
+        setHealth(health);
+        std::cout<<"\nLa salud actual de "<< getNombre() <<" es de "<<health<<std::endl; 
     }
 
     void Warrior::printPercentage(){
@@ -64,27 +67,32 @@ bool Warrior::DeadOrAlive(){
         //HealthPercentage(); 
     }
 
-    int Warrior::animation(Personaje& p1){
+    int Warrior::animation(){
         #include <cstdlib> 
         srand((unsigned) time(NULL));
-        int random = (rand() % maxHealth);
+        int random = (rand() % maxDamage);
         std::cout<<"\t"<<getNombre()<<std::endl; 
         std::cout<<"======================================"<<std::endl; 
         std::cout<<"\tATACO CON "<< random <<" de PODER"<<std::endl;
         std::cout<<" ================================"<<std::endl; 
         int health; 
-        recieve(random,p1); 
+        return random*-1; 
+        //recieve(random); 
     }
 
-    void Warrior::recieve(int hit,Personaje& p1){
-        std::cout<<"\t"<<p1.getNombre()<<std::endl; 
+    void Warrior::recieve(int hit){
+        int hitt; 
+        //hitt=hit*-1;
+        std::cout<<"\t"<<getNombre()<<std::endl; 
         std::cout<<"======================================"<<std::endl; 
-        std::cout<<" RECIBISTE "<< hit <<" de daño"<<std::endl;
+        std::cout<<" RECIBISTE "<< hit*-1 <<" de daño"<<std::endl;
         std::cout<<" ================================"<<std::endl; 
         int res; 
-        res=getHealth()-hit; 
+        res=getHealth()+hit; 
+        setHealth(res); 
         if(res>0){
-            setHealth(res);
+            
+            std::cout<<"La salud actual de "<<getNombre()<<" es de "<<res<<std::endl; 
             //HealthPercentage();
         }else{
             setHealth(0);

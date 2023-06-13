@@ -12,9 +12,9 @@ class Warrior:public Personaje{
         bool DeadOrAlive(); 
         //int HealthPercentage(); 
         void printPercentage(); 
-        void printHealth();
-        int animation(Personaje&); 
-        void recieve(int,Personaje&); 
+        void printHealth(int);
+        int animation(); 
+        void recieve(int); 
 
 
 

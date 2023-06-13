@@ -8,8 +8,8 @@ class Friendly:public Personaje{
         void setStory(std::string); 
         std::string getStory()const;
         int estatus(); 
-        int animation(Personaje&); 
-        void recieve(int,Personaje&);  
+        int animation(); 
+        void recieve(int)override;  
         void imprimeAmigo(); 
 
 

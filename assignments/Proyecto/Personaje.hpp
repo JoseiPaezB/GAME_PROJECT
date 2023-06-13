@@ -14,8 +14,8 @@ class Personaje{
         void setSouls(int); 
         int getSouls()const;
         virtual void imprime(); 
-        virtual int animation(Personaje&)=0; 
-        virtual void recieve(int,Personaje&)=0; 
+        virtual int animation()=0; 
+        virtual void recieve(int)=0; 
 
     private: 
         std::string nombre,Description; 

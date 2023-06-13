@@ -37,6 +37,9 @@ std::string Personaje::getDescription(){
     return souls; 
 }*/
 
+
+
+
 void Personaje::imprime(){
     std::cout<<"================================================"<<std::endl;
     std::cout<< "\t\t " << nombre <<std::endl; 
