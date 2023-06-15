@@ -1,4 +1,5 @@
 #include "Warrior.hpp"
+#include <cstdlib> 
 
 Warrior::Warrior(){
     maxHealth=40; 
@@ -28,16 +29,16 @@ int Warrior::getHealth()const{
 
 bool Warrior::DeadOrAlive(){
     if(getHealth()>0){
-        std::cout<<"\t"<<getNombre()<<std::endl; 
+        /*std::cout<<"\t"<<getNombre()<<std::endl; 
         std::cout<<"================================"<<std::endl; 
         std::cout<<"\t"<<"VIVO"<<std::endl;
-        std::cout<<" ================================"<<std::endl; 
+        std::cout<<" ================================"<<std::endl; */
         return 1; 
     }else{
-        std::cout<<"\t"<<getNombre()<<std::endl; 
+        /*std::cout<<"\t"<<getNombre()<<std::endl; 
         std::cout<<"================================"<<std::endl; 
         std::cout<<"\t"<<"MUERTO"<<std::endl;
-        std::cout<<" ================================"<<std::endl; 
+        std::cout<<" ================================"<<std::endl; */
         return 0; 
     }
 }
@@ -67,10 +68,21 @@ bool Warrior::DeadOrAlive(){
         //HealthPercentage(); 
     }
 
+    void Warrior::operator+(int plus){
+        int health; 
+        if(getHealth()>220){
+            health=getHealth(); 
+            std::cout<<"TU VIDA ESTA AL MAXIMO: "<< health <<std::endl; 
+        }else{
+            health=getHealth()+plus;
+            setHealth(health); 
+            std::cout<<"Vida Actual de "<<getNombre()<<" es de "<<health<<std::endl;  
+        }
+
+    }
+
     int Warrior::animation(){
-        #include <cstdlib> 
-        srand((unsigned) time(NULL));
-        int random = (rand() % maxDamage);
+        int random = 20 + rand() % (getDamage() - 20 + 1);
         std::cout<<"\t"<<getNombre()<<std::endl; 
         std::cout<<"======================================"<<std::endl; 
         std::cout<<"\tATACO CON "<< random <<" de PODER"<<std::endl;
@@ -96,6 +108,7 @@ bool Warrior::DeadOrAlive(){
             //HealthPercentage();
         }else{
             setHealth(0);
+            std::cout<<getNombre()<<" \t\nHAS MUERTO "<<std::endl; 
             DeadOrAlive(); 
         }
 

@@ -1,4 +1,5 @@
 #include <iostream> 
+#include <fstream>
 #pragma once
 
 
@@ -13,6 +14,7 @@ class Personaje{
         std::string getDescription(); 
         void setSouls(int); 
         int getSouls()const;
+        friend std::ostream& operator<< (std::ostream &, const Personaje&);
         virtual void imprime(); 
         virtual int animation()=0; 
         virtual void recieve(int)=0; 

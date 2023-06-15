@@ -1,0 +1,7 @@
+Te encuentras en los calabozos de HADES, 
+de repente salta alguien y se te acerca. 
+no puedes verlo bien, por ende no sabes si sera bueno o malo. 
+
+Decidiras interactuar con el?
+1.SI 
+2.NO

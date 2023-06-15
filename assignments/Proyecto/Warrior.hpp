@@ -11,6 +11,8 @@ class Warrior:public Personaje{
         int getHealth()const; 
         bool DeadOrAlive(); 
         //int HealthPercentage(); 
+        void operator+(int); 
+        
         void printPercentage(); 
         void printHealth(int);
         int animation(); 

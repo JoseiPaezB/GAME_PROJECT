@@ -38,6 +38,11 @@ std::string Personaje::getDescription(){
 }*/
 
 
+std::ostream& operator<< (std::ostream & salida, const Personaje& p1){
+    salida<< p1.nombre << "\n" << p1.Description<<"\n"; 
+    return salida; 
+
+}
 
 
 void Personaje::imprime(){
