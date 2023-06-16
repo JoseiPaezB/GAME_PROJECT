@@ -10,7 +10,7 @@ class Warrior:public Personaje{
         int getDamage()const; 
         int getHealth()const; 
         bool DeadOrAlive(); 
-        //int HealthPercentage(); 
+        std::string HealthPercentage(); 
         void operator+(int); 
         
         void printPercentage(); 

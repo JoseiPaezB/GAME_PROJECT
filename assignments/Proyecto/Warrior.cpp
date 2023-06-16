@@ -43,17 +43,24 @@ bool Warrior::DeadOrAlive(){
     }
 }
 
-/*int Warrior::HealthPercentage(){
-    int health; 
-    health=getHealth(); 
-    char arrBar[20]={"###################"}; 
-    if(health!=maxHealth){
-        for (int i = 0; i < sizeof(arrBar); i++){
-            
+std::string Warrior::HealthPercentage(){
+    int totalHealth = 200;
+    int health = getHealth();
+    const int arrBarSize = 20;
+    char arrBar[arrBarSize] = {"###################"};
+    int res = health * 20 / 200;
+
+    if (health != totalHealth) {
+        for (int i = 0; i < arrBarSize; i++) {
+            if (i >= res) {
+                arrBar[i] = '*';  // Reemplazar '#' por '-'
+            }
         }
-    
     }
-    }*/
+
+    std::string result(arrBar, arrBar + arrBarSize);
+    return result;
+}
 
     void Warrior::printHealth(int vidaMasOMenos){
         int health;
@@ -86,7 +93,7 @@ bool Warrior::DeadOrAlive(){
         std::cout<<"\t"<<getNombre()<<std::endl; 
         std::cout<<"======================================"<<std::endl; 
         std::cout<<"\tATACO CON "<< random <<" de PODER"<<std::endl;
-        std::cout<<" ================================"<<std::endl; 
+        std::cout<<" ================================\n\n"<<std::endl; 
         int health; 
         return random*-1; 
         //recieve(random); 
@@ -96,15 +103,15 @@ bool Warrior::DeadOrAlive(){
         int hitt; 
         //hitt=hit*-1;
         std::cout<<"\t"<<getNombre()<<std::endl; 
-        std::cout<<"======================================"<<std::endl; 
+        std::cout<<"\n======================================"<<std::endl; 
         std::cout<<" RECIBISTE "<< hit*-1 <<" de daño"<<std::endl;
-        std::cout<<" ================================"<<std::endl; 
+        std::cout<<"\n================================\n\n"<<std::endl; 
         int res; 
         res=getHealth()+hit; 
         setHealth(res); 
         if(res>0){
             
-            std::cout<<"La salud actual de "<<getNombre()<<" es de "<<res<<std::endl; 
+            std::cout<<"\nLa salud actual de "<<getNombre()<<" es de "<<res<<std::endl; 
             //HealthPercentage();
         }else{
             setHealth(0);

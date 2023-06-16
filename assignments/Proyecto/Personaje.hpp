@@ -12,8 +12,6 @@ class Personaje{
         void setDescription(std::string); 
         std::string getNombre(); 
         std::string getDescription(); 
-        void setSouls(int); 
-        int getSouls()const;
         friend std::ostream& operator<< (std::ostream &, const Personaje&);
         virtual void imprime(); 
         virtual int animation()=0; 

@@ -1,5 +1,5 @@
 Este juego cuenta la historia de un guerrero llamado Kratos. 
-Hijo de Zeus, el semidios juro vengarse de su padre y todo el olimpio despues de haber sido desterrado. 
-Tu mision es atravesar por los diferentes reinos en busca del dios del rayo y cualquiera que se oponga. 
-Ten cuidado en algunos reinos pueden haber personajes que te ayudaran, 
+Hijo de Zeus, el semidiós juró vengarse de su padre y todo el olimpo después de haber sido desterrado. 
+Tu misión es atravesar el OLIMPO en busca del dios del rayo y a cualquiera que se oponga. 
+Ten cuidado en algunos lugares pueden haber personajes que te ayudarán, 
 y en otros hay quienes te mataran...

@@ -1,7 +1,8 @@
-Te encuentras en los calabozos de HADES, 
+Te encuentras en los jardines de ATENAS, 
 de repente salta alguien y se te acerca. 
-no puedes verlo bien, por ende no sabes si sera bueno o malo. 
+no puedes verlo bien, hay una tormenta extrema, 
+por ende no sabes si será bueno o malo. 
 
-Decidiras interactuar con el?
+¿Decidiras interactuar con el?
 1.SI 
 2.NO

@@ -61,7 +61,19 @@
 
 //}
 
-
+/*golpe= w1.animation(); 
+              sleep(2); 
+              Dioses[i]->recieve(golpe); 
+              if (Dioses[i]->DeadOrAlive()==false){
+                  cout<<w1.getNombre()<<" HAS MATADO A "<<Dioses[i]->getNombre()<<endl; 
+                  sleep(2); 
+                  cout<<"TU SALUD ACTUAL ES DE "<<w1.getHealth()<<endl; 
+                  sleep(2); 
+                  cout<<"AVANZARAS A LA SIGUIENTE SECCION"<<endl; 
+                  sleep(2); 
+                  avanzarSiguienteSeccion = true; 
+                  break; 
+              }*/
 
 
 

@@ -33,22 +33,23 @@ int Friendly::animation(){
         nom=getNombre();
         std::cout<<"\t\n"<< nom<<std::endl;
         string="NO ESTA DISPUESTO A HABLAR !";
-        std::cout<<"================================"<<std::endl; 
+        std::cout<<"\n\n================================"<<std::endl; 
         std::cout<<string<<std::endl;
-        std::cout<<"================================"<<std::endl; 
+        std::cout<<"================================\n\n"<<std::endl; 
         return res; 
     }else{ 
        
         string=getStory(); 
         nom=getNombre();
         std::cout<<"\t\n"<< nom<<std::endl;
-        std::cout<<"================================"<<std::endl; 
+        std::cout<<"\n\n================================"<<std::endl; 
         std::cout<<" La historia de "<<getNombre()<<" es:"<<std::endl;
         std::cout<<"\t"<<string<<std::endl;
-        std::cout<<"================================"<<std::endl; 
+        std::cout<<"================================\n\n"<<std::endl; 
         #include <cstdlib> 
         srand((unsigned) time(NULL));
-        int random = (1+ rand() % 5)*5;
+        int random = (1+ rand() % 10)*5;
+        
         
         
         return random; 
@@ -70,7 +71,7 @@ void Friendly::recieve(int donation){
     if(donation>3){
         //std::cout<<p1.getNombre()<<"Has recibido" << donation*5 <<"puntos de vida" <<std::endl;
         //std::cout<<getNombre()<<" Has recibido " << donation <<" puntos de vida " <<std::endl;
-        std::cout<<"CANTIDAD NECESARIA PARA INTERACTUAR"<<std::endl;  
+        std::cout<<"\nCANTIDAD NECESARIA PARA INTERACTUAR"<<std::endl;  
         
     }else{ 
         std::string nom; 
