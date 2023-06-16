@@ -1,2 +1,18 @@
-UN JUEGO CREADO POR JOSE IGNACIO PAEZ
+UN JUEGO CREADO POR JOSÉ IGNACIO PAEZ
 ALUMNO DEL TEC DE MONTERREY
+
+Para poder ganar el juego es sencillo, 
+se debe interactuar con los dos personajes amistoso que salen, 
+ya que ellos proporcionan pistas de cómo vencer a los Dioses con los que Kratos se encara, 
+además de que nos dan vida en un rango de 0 a 50+ 
+Al interactuar con los personajes, dependiendo de qué número del 1 al 5 se les de ellos se activaran. 
+Si es una cantidad menor o igual a 3, el personaje no va a interactuar y dirá como si estuviera dormido. 
+En caso de que demos los valores 4 y 5, se activará el personaje, sin embargo hay la posibilidad (30%), 
+de que el personaje decida no hablar y nada más nos de su descripción. 
+Al luchar contra cualquiera de los dioses, ellos siempre nos harán daño, 
+es cuestion del jugador si es que logra contraatacar o no. 
+Contra HADES solo numeros pares lo harán daño, pero OJO, 
+nunca se puede repetir un valor que ya colocaste del 1 al 10. 
+Para Zeus, este solo recibirá daño si es que se coloca un número impar. 
+
+

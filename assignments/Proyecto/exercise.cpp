@@ -186,6 +186,10 @@ std::string storyBoy(){
   "Me asusta este lugar, los Dioses acaban con cualquiera que es de afuera\n"
   "Kratos, te pido que logres hablar con Zeus y que permitas mi entrada legítima\n"
   "Te dare una bebida mágica que aumentará tu vida\n"
+  "Ten cuidado mas adelante estan los calabozos, \n"
+  "Dicen que por ahi hay algo muy feo, \n"
+  "Por alguna razon mencionan que no le gusta que sea dividido para dos \n"
+  "No se a que se refieran con eso...\n"
   "Buena suerte Guerrero\n";
 
 
@@ -205,14 +209,24 @@ std::string storyPandora(){
 
 int main() 
 {
+  ifstream fi; 
+  fi.open("recomendacion.txt"); 
+  string ti;
+  while (std::getline(fi, ti)) {
+    cout << ti << endl;
+    sleep(1);
+  }
+
+  sleep(5); 
+  
   srand((unsigned) time(NULL));
 
 std::set<int> usedNumbers;
 std::set<int> usedNumbers2;
  vector<Friendly*>Amigos; 
  vector<Warrior*>Dioses; 
-  Dioses.push_back(new Warrior("HADES","DIOS del Inframundo",1,45)); 
-  Dioses.push_back(new Warrior("ZEUZ","DIOS del Rayo",100,150));
+  Dioses.push_back(new Warrior("HADES","DIOS del Inframundo",70,45)); 
+  Dioses.push_back(new Warrior("ZEUZ","DIOS del Rayo",100,60));
   Amigos.push_back(new Friendly("BOY","HUMANO",storyBoy())); 
   Amigos.push_back(new Friendly("PANDORA","HUMANA Y NIÑA",storyPandora()));
 
@@ -245,11 +259,11 @@ if(gjj!=1){
     sleep(1);
   }
   int valor,vida,n,z,golpe,res,i,y;
-  Warrior w1("KRATOS","SEMIGOD",200,50);
+  Warrior w1("KRATOS","SEMIDIOS \n HIJO DE ZEUS",200,58);
   
 
 int opc; 
-sleep(2);
+sleep(3);
 while(opc!=4){
   ifstream arch; 
   arch.open("MENU.txt"); 
@@ -266,7 +280,7 @@ while(opc!=4){
   deba=200; 
   sleep(2);
   cout<<" BIENVENIDO Al OLIMPO"<<endl;
-  sleep(2); 
+  sleep(3); 
   cout<<"\n\nTU PERSONAJE ES: "<<endl;
   cout<<"\n"<<w1; 
   sleep(3);
@@ -282,7 +296,7 @@ while(opc!=4){
     if (pa==0){
       break; 
     }
-    sleep(3);
+    sleep(4);
     ifstream archive; 
     archive.open("Objetivo.txt"); 
     string tin;
@@ -312,7 +326,7 @@ while(opc!=4){
         cout<<"ESTE CAMINO YA HA SIDO CURZADO"<<endl; 
       }
       else{
-      while(w1.getHealth()<=250){
+      while(w1.getHealth()<=251){
         cout<<"\n\tAl acercarte parece inofensivo sin emabrgo"<<endl; 
         cout<<"\n\tPara interactuar con el te pide un numero del 1 a 5, "<<endl;
         cout<<"\n\tCuidado al dar tu numero, tu VIDA depende de ello"<<endl;  
@@ -416,6 +430,8 @@ while(opc!=4){
             //w1.setHealth(200); 
             Dioses[0]->setHealth(75);
             Dioses[1]->setHealth(100);
+            usedNumbers.clear();
+            usedNumbers2.clear();
             z=0; 
             pa=0;
             avanzarSiguienteSeccion=true; 
@@ -437,7 +453,7 @@ while(opc!=4){
               cout<<"BARRA DE SALUD "<<w1.getNombre()<<":"<<"\n"<<barra<<"\n";
               sleep(2); 
               cout<<"\nPARA RESPONDER CON UN GOLPE, DEBES DIGITAR UN NUMERO DEL UNO AL DIEZ"<<endl; 
-              cout<<"\nDEPENDIENDO DE LA CANTIDAD QUE INGRESES, RESPONDERAS CON UN GOLPE"<<endl; 
+              cout<<"\nDEPENDIENDO DE LA CANTIDAD QUE INGRESES, RESPONDERAS CON UN GOLPE\n DE LO CONTRARIO SOLO TE PEGARAN A TI"<<endl; 
               int n = GetUniqueInput(usedNumbers);
               usedNumbers.insert(n);
               //int d=ChekeaDatoIngresado(n);  
@@ -455,6 +471,7 @@ while(opc!=4){
                   sleep(2); 
                   cout<<"\nDEBERAS SEGUIR RECORRIENDO"<<endl;
                   avanzarSiguienteSeccion = true; 
+                  usedNumbers.clear();
                   break;
                   
                    
@@ -470,7 +487,9 @@ while(opc!=4){
               sleep(2); 
               //w1.setHealth(200); 
               Dioses[0]->setHealth(75);
-              Dioses[1]->setHealth(100);
+              Dioses[1]->setHealth(100); 
+              usedNumbers.clear();
+              usedNumbers2.clear();
               z=0; 
               pa=0;
               gameOver();
@@ -480,6 +499,7 @@ while(opc!=4){
       
         }else if(Dioses[i]->DeadOrAlive()==false){
           cout<<w1.getNombre()<<"HAS MATADO A"<<Dioses[i]->getNombre()<<endl; 
+           usedNumbers.clear();
           sleep(2); 
           sleep(2); 
           break; 
@@ -524,7 +544,7 @@ while(opc!=4){
         cout<<"ESTE CAMINO YA HA SIDO CURZADO"<<endl; 
       }
       else{
-      while(w1.getHealth()<=250){
+      while(w1.getHealth()<=251){
         cout<<"\n\tAl acercarte parece inofensivo sin emabrgo"<<endl; 
         cout<<"\n\tPara interactuar con el te pide de 1 a 5, "<<endl;
         cout<<"\n\tCuidado al darlas, tu destino depende de ello"<<endl;  
@@ -667,7 +687,7 @@ while(opc!=4){
               std::string barra=w1.HealthPercentage();
               cout<<"\nBARRA DE SALUD "<<w1.getNombre()<<":"<<"\n"<<barra<<"\n";
               cout<<"\nPARA RESPONDER CON UN GOLPE, DEBES DIGITAR UN NUMERO DEL UNO AL DIEZ"<<endl; 
-              cout<<"\nDEPENDIENDO DE LA CANTIDAD QUE INGRESES, RESPONDERAS CON UN GOLPE"<<endl; 
+              cout<<"\nDEPENDIENDO DE LA CANTIDAD QUE INGRESES, RESPONDERAS CON UN GOLPE,\n DE LO CONTRARIO SOLO TE PEGARAN A TI"<<endl; 
               int n = GetUniqueInput2(usedNumbers2);
               usedNumbers2.insert(n);
               //int d=ChekeaDatoIngresado(n);  
@@ -682,7 +702,7 @@ while(opc!=4){
                   sleep(2); 
                   std::string barra=w1.HealthPercentage();
                   cout<<"\nBARRA DE SALUD"<<"\n"<<barra<<"\n";
-
+                  usedNumbers2.clear();
                   victoria();
                   w1.setHealth(200); 
                   Dioses[0]->setHealth(75);
@@ -700,7 +720,7 @@ while(opc!=4){
               gameOver(); 
               Dioses[0]->setHealth(75);
               Dioses[1]->setHealth(100);
-
+              usedNumbers2.clear();
               sleep(2); 
               avanzarSiguienteSeccion=true; 
               break;
@@ -709,8 +729,11 @@ while(opc!=4){
         }else if(Dioses[i]->DeadOrAlive()==false){
           cout<<w1.getNombre()<<"HAS MATADO A"<<Dioses[i]->getNombre()<<endl; 
           sleep(2); 
-          cout<<"AVANZARAS A LA SIGUIENTE SECCION"<<endl; 
           sleep(2); 
+          Dioses[0]->setHealth(75);
+          Dioses[1]->setHealth(100); 
+          usedNumbers2.clear();
+
           break; 
         }
       }
@@ -721,6 +744,10 @@ while(opc!=4){
     if(w1.getHealth()==0){
       cout<<"Digita 1 para regresar"<<endl; 
       w1.setHealth(200); 
+      Dioses[0]->setHealth(75);
+      Dioses[1]->setHealth(100);
+      usedNumbers2.clear();
+      usedNumbers.clear();
       int rr; 
       cin>>rr;
       int ff=ChekeaDatoIngresado3(rr); 

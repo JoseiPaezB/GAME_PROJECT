@@ -1,0 +1,2 @@
+Se recomienda intentar jugar sin leer la clave (opcion 3 Menu), 
+sin embargo en caso de no comprender el jugeo, leerla. 
